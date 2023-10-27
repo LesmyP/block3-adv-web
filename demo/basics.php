@@ -9,8 +9,8 @@ operators</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, expedita culpa? Aperiam, suscipit. Doloribus deserunt voluptatum autem asperiores repellendus, veritatis, deleniti tempora aliquid perspiciatis ipsa vitae aspernatur dolorum et sequi!</p>
 <?php
     ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
 
     $firstName = "peter";
     // echo "First Name: $firstName";
