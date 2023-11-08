@@ -111,29 +111,6 @@ openButton.addEventListener('click', function() {
 
 //coding challenge... only show the modal once...
 
-let modeToggle = document.querySelector('#toggle');
-const main = document.querySelector('main');
-
-modeToggle.addEventListener('change', (event)=>{
-  //console.log(event.target.checked);
-  if(event.target.checked){
-    window.localStorage.setItem('mode', 'dark');
-  }else{
-    window.localStorage.setItem('mode', 'light');
-  }
-  checkMode();
-})
-
-function checkMode(){
-
-  if(window.localStorage.getItem('mode') == 'dark'){
-    main.classList.remove('light-mode');
-    modeToggle.checked = true; //challenge question: what does this do?
-  }else{
-    main.classList.add('light-mode');
-    modeToggle.checked = false;
-  }
-}
 
 //check if 'mode' is set in localStorage();
 checkMode();
