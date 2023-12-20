@@ -1,19 +1,42 @@
-|----------------|       |---------------|       |--------------------|         
-|     Brands     |       |     Parts     |       |  Compatibility     |            
-|----------------|       |---------------|       |--------------------|    
-| - brand_id     |       | - part_id     |       | - compatibility_id |          
-| - brand_name   |       | - part_name   |       | - compatible_with  |        
-|                |       | - brand_id    |       | - part_id          |          
-|                |       | - price       |       |--------------------|             
-|----------------|       |---------------|
+|----------------|                       
+|     Brands     |                          
+|----------------|                  
+| - brand_id     |                        
+| - brand_name   |                      
+|                |                        
+|                |                           
+|----------------|       
 
+|---------------|
+|     Parts     |
+|---------------|
+| - part_id     |
+| - part_name   |
+| - brand_id    |
+| - price       |
+|---------------|
 
-|----------------|      |--------------------|
-|   Computers    |      | ComputerParts      |
-|----------------|      |--------------------|
-| - computer_id  |      | - computer_part_id |
-| - computer_name|      | - computer_id      |
-|                |      | - part_id          |
-|----------------|      |--------------------|
+|--------------------|
+|  Compatibility     |
+|--------------------|
+| - compatibility_id |
+| - compatible_with  |
+| - part_id          |
+|--------------------|
 
+|----------------|      
+|   Computers    |      
+|----------------|      
+| - computer_id  |      
+| - computer_name|      
+|                |      
+|----------------|      
+
+|--------------------|
+| ComputerParts      |
+|--------------------|
+| - computer_part_id |
+| - computer_id      |
+| - part_id          |
+|--------------------|
 
