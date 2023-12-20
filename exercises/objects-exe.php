@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 class LedLight
 {
+    
     private $isOn = false;
     private $selectedColor = 0;
     private $selectedBrightness = 0;
