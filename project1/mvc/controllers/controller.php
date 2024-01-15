@@ -1,6 +1,6 @@
 <?php
 include 'connection.php';
-include '../models/model.php'; // Update the path as needed
+include '../model/model.php'; 
 
 class Controller {
     private $model;
@@ -17,6 +17,12 @@ class Controller {
         return $this->model->addPart($partName, $partTypeID, $brandID, $price, $compatibility);
     }
 
-    // Add functions for other CRUD operations
+    public function deletePart($partID) {
+        return $this->model->deletePart($partID);
+    }
+
+    public function updatePart($partID, $partName, $partTypeID, $brandID, $price, $compatibility) {
+        
+    }
 }
 ?>

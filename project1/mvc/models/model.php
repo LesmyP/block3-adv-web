@@ -24,7 +24,7 @@ class Model {
         return $this->conn->query($query);
     }
 
-    // Add functions for other CRUD operations
+
 }
 ?>
 
