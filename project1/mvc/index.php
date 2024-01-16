@@ -1,20 +1,47 @@
-<?php
-include 'mvc/controllers/Controller.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>MVC with mySQL Lesmy new</h1>
 
-$controller = new Controller($conn);
-$parts = $controller->getAllParts();
+    <?php
+        include_once 'controllers/controller.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['submit'])) {
-        $partName = $_POST['partName'];
-        $partTypeID = $_POST['partTypeID'];
-        $brandID = $_POST['brandID'];
-        $price = $_POST['price'];
-        $compatibility = $_POST['compatibility'];
+        // Instantiate the connection
+        $connection = new connectionObject($host, $username, $password, $database);
 
-        $controller->addPart($partName, $partTypeID, $brandID, $price, $compatibility);
-    }
-}
+        // Instantiate the model
+        $modelBrand = new brandsModel($connection);
 
-include 'mvc/views/home.php';
-?>
+        // Get brands data
+        $brands = $modelBrand->selectComputerBrands();
+
+        // Include the view
+        include 'views/brand-view.php';
+    ?>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!-- /project1
+  /controllers
+    Controller.php
+    ControllerBrand.php
+  /models
+    Model.php
+    ModelBrand.php
+  /views
+    home.php
+    brand-view.php
+  index.php -->
