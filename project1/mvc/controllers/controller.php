@@ -1,40 +1,55 @@
 <?php
 
-include_once 'models/model.php';
-
 class Controller {
     private $model;
+    
     public function __construct($connection) {
         $this->model = new userModel($connection);
     }
 
     public function computerBrands() {
-        include 'views/computer_brands.php';
+        $this->computerBrandsList();
     }
-
 
     public function addComputerBrand() {
         $name = $_POST['name'];
+
+        if (isset($_POST['insert'])) {
+            // Insert action
+            $this->insertBrand($name);
+        } elseif (isset($_POST['delete'])) {
+            // Delete action
+            $this->deleteBrand($name);
+        } else {
+            echo "<p>Invalid action</p>";
+            $this->computerBrandsList();
+        }
+
+        // Retrieve brands after insert or delete
+        $this->computerBrandsList();
+    }
+
+    private function insertBrand($name) {
         if (!$name) {
             echo "<p>Missing information</p>";
-            $this->computerBrands();
-            return;
-        } else if ($this->model->insertComputerBrand($name)) {
+        } elseif ($this->model->insertComputerBrand($name)) {
             echo "<p>Added computer brand: $name</p>";
         } else {
             echo "<p>Could not add computer brand</p>";
         }
-        $this->computerBrandsList();
     }
 
-    public function deleteComputerBrand() {
-        $id = $_POST['id'];
-        $this->model->deleteComputerBrand($id);
-        $this->computerBrandsList();
+    private function deleteBrand($name) {
+        if (!$name) {
+            echo "<p>Missing information</p>";
+        } else {
+            $this->model->deleteComputerBrand($name);
+            echo "<p>Deleted computer brand: $name</p>";
+        }
     }
 
+    public function computerBrandsList() {
+        $brands = $this->model->selectComputerBrands();
+        include 'views/brand-view.php';
+    }
 }
-
-
-include_once 'controllers/connection.php';
-$connection = new Connection($host, $database, $username, $password);

@@ -2,9 +2,13 @@
 
 class connectionBrand {
     public function __construct($host, $username, $password, $database) {
-        
+        $this->host = $host;
+        $this->username = $username;
+        $this->password = $password;
+        $this->database = $database;
     }
 }
+
 class brandsModel {
     private $connectionBrand;
 
@@ -22,12 +26,12 @@ class brandsModel {
             );
 
             if ($mysqli->connect_error) {
-                throw new Exception('Could not connect');
+                throw new Exception('Could not connect: ' . $mysqli->connect_error);
             }
 
             return $mysqli;
         } catch (Exception $e) {
-            return false;
+            die('Error: ' . $e->getMessage());
         }
     }
 
@@ -35,7 +39,13 @@ class brandsModel {
         $mysqli = $this->connect();
 
         if ($mysqli) {
-            $result = $mysqli->query("SELECT * FROM ComputerBrand");
+            $result = $mysqli->query("SELECT * FROM ComputerBrands");
+
+            if ($result === false) {
+                die('Error in query: ' . $mysqli->error);
+            }
+
+            $results = array(); // Initialize results array
 
             while ($row = $result->fetch_assoc()) {
                 $results[] = $row;
@@ -44,7 +54,7 @@ class brandsModel {
             $mysqli->close();
             return $results;
         } else {
-            return false;
+            return array(); // Return an empty array if connection fails
         }
     }
 
@@ -52,7 +62,27 @@ class brandsModel {
         $mysqli = $this->connect();
 
         if ($mysqli) {
-            $mysqli->query("INSERT INTO ComputerBrand (name) VALUES ('$name')");
+            $query = "INSERT INTO ComputerBrands (BrandName) VALUES ('$name')";
+            if ($mysqli->query($query) === false) {
+                die('Error in query: ' . $mysqli->error);
+            }
+
+            $mysqli->close();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteComputerBrand($name) {
+        $mysqli = $this->connect();
+
+        if ($mysqli) {
+            $query = "DELETE FROM ComputerBrands WHERE BrandName = '$name'";
+            if ($mysqli->query($query) === false) {
+                die('Error in query: ' . $mysqli->error);
+            }
+
             $mysqli->close();
             return true;
         } else {

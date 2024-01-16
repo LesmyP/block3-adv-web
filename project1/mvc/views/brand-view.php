@@ -7,12 +7,12 @@
 </head>
 <body>
 
-    <h1>Computer Brands</h1>
+    <h1>Computer Brands new</h1>
 
     <form method="POST">
         <input type="text" name="name" placeholder="Name" value="<?php echo $_POST['name'] ? $_POST['name'] : ""; ?>">
-        <input type="submit" name="submit" value="Submit">
-        <input type="reset" name="reset" value="Reset">
+        <button type="submit" name="insert">Insert</button>
+        <button type="submit" name="delete">Delete</button>
     </form>
 
     <table border="1">
