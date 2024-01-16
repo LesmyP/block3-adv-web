@@ -21,11 +21,14 @@
             <th>Name</th>
         </tr>
         <?php
+        // Initialize $brands if not set
+        $brands = $brands ?? array();
+
         if ($brands) {
             foreach ($brands as $brand) {
                 echo "<tr>";
-                echo "<td>" . $brand['ID'] . "</td>";
-                echo "<td>" . $brand['name'] . "</td>";
+                echo "<td>" . $brand['BrandID'] . "</td>"; 
+                echo "<td>" . $brand['BrandName'] . "</td>"; 
                 echo "</tr>";
             }
         } else {
@@ -36,3 +39,4 @@
 
 </body>
 </html>
+

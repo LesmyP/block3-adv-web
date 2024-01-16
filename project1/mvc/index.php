@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>MVC with mySQL Lesmy new</h1>
+    <h1>MVC with mySQL Lesmy new1</h1>
 
     <?php
         include_once 'controllers/controller.php';
