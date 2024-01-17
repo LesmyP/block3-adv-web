@@ -7,6 +7,7 @@
             $this->model = new userModel($connection);
         }
         public function showBrands() {
+            // echo "SELECT * FROM computerBrands";
             $users = $this->model->selectBrand();
             include 'views/home.php';
         }
@@ -19,7 +20,7 @@
                 echo "<p>Missing information</p>";
                 $this->showForm();
                 return;
-            } else if($this->model->selectBrand($name)){
+            } else if($this->model->insertBrand($name)){
                 echo "<p>Added brand: $name</p>";
             } else {
                 echo "<p>Could not add brand</p>";

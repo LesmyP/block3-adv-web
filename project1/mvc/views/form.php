@@ -1,3 +1,4 @@
+FORM
 <form method="POST">
     <input type="text" name="brandName" placeholder="Brand" value="<?php echo $_POST['brandName']?$_POST['brandName']:""; ?>">
 

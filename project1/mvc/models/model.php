@@ -1,6 +1,6 @@
 <?php
 
-class connectionObselectBrandsject {
+class connectionObject {
     public function __construct(public $host, public $username, public $password, public $database) {
     }
 }
@@ -22,7 +22,8 @@ class userModel {
             return false;
         }
     }
-    public function selectBrands(){
+    public function selectBrand(){
+        // echo "SELECT * FROM computerBrands";
         $mysqli = $this->connect();
         if($mysqli) {
             $result = $mysqli->query("SELECT * FROM computerBrands");

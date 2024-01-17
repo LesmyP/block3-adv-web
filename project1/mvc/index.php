@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>MVC with mySQL - Lesmy last w</h1>
+    <h1>MVC with mySQL</h1>
     <!-- add controller -->
     <?php
         include_once("controllers/controller.php");
