@@ -19,9 +19,8 @@ INSERT INTO `ComputerParts` (`PartID`, `PartName`, `PartTypeID`, `BrandID`, `Pri
 -- (NULL, 'Processor C', '1', '1', '229.99', '1'),
 -- (NULL, 'Graphics Card Z', '2', '3', '399.99', '3');
 
-
-CREATE TABLE ComputerBrands ( BrandID INT PRIMARY KEY AUTO_INCREMENT, BrandName VARCHAR(255) NOT NULL );
-INSERT INTO ComputerBrands (BrandID, BrandName) VALUES (1, 'Intel'), (2, 'AMD'), (3, 'NVIDIA'), (4, 'Corsair'), (5, 'ASUS'), (6, 'Gigabyte'), (7, 'Seagate');
+CREATE TABLE computerBrands ( brandID INT PRIMARY KEY AUTO_INCREMENT, brandName VARCHAR(255) NOT NULL );
+INSERT INTO computerBrands (brandID, brandName) VALUES (1, 'Intel'), (2, 'AMD'), (3, 'NVIDIA'), (4, 'Corsair'), (5, 'ASUS'), (6, 'Gigabyte'), (7, 'Seagate');
 
 CREATE TABLE ComputerPartTypes ( PartTypeID INT PRIMARY KEY AUTO_INCREMENT, TypeName VARCHAR(255) NOT NULL );
 INSERT INTO ComputerPartTypes (PartTypeID, TypeName) VALUES (1, 'Processor'), (2, 'Graphics Card'), (3, 'Memory Module'), (4, 'Motherboard'), (5, 'Storage');

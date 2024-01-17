@@ -6,42 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>MVC with mySQL Lesmy new1</h1>
-
+    <h1>MVC with mySQL - Lesmy last w</h1>
+    <!-- add controller -->
     <?php
-        include_once 'controllers/controller.php';
-
-        // Instantiate the connection
-        $connection = new connectionObject($host, $username, $password, $database);
-
-        // Instantiate the model
-        $modelBrand = new brandsModel($connection);
-
-        // Get brands data
-        $brands = $modelBrand->selectComputerBrands();
-
-        // Include the view
-        include 'views/brand-view.php';
+        include_once("controllers/controller.php");
     ?>
 </body>
 </html>
 
 
 
-
-
-
-
-
-
-<!-- /project1
-  /controllers
-    Controller.php
-    ControllerBrand.php
-  /models
-    Model.php
-    ModelBrand.php
-  /views
-    home.php
-    brand-view.php
-  index.php -->
