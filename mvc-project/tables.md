@@ -1,6 +1,6 @@
-# Table 1: Parts
+# Table 1:parts
 
-| PartID | PartName          | PartTypeID | BrandID | Price   | Compatibility |
+| partID | partName          | partTypeID | brandID | price   | compatibility |
 |--------|-------------------|------------|---------|---------|---------------|
 | 1      | Processor A       | 1          | 1       | 199.99  | Intel,AMD     |
 | 2      | Graphics Card X   | 2          | 3       | 349.99  | NVIDIA        |
@@ -15,9 +15,9 @@
 | 11     | Processor C       | 1          | 1       | 229.99  | Intel,AMD     |
 | 12     | Graphics Card Z   | 2          | 3       | 399.99  | NVIDIA        |
 
-# Table 2: Brands
+# Table 2: brands
 
-| BrandID | BrandName |
+| brandID | brandName |
 |---------|-----------|
 | 1       | Intel     |
 | 2       | AMD       |
@@ -27,9 +27,9 @@
 | 6       | Gigabyte  |
 | 7       | Seagate   |
 
-# Table 3: PartTypes
+# Table 3: partTypes
 
-| PartTypeID | TypeName        |
+| partTypeID | typeName        |
 |------------|-----------------|
 | 1          | Processor       |
 | 2          | Graphics Card   |
@@ -37,9 +37,9 @@
 | 4          | Motherboard     |
 | 5          | Storage         |
 
-# Table 4: Compatibility
+# Table 4: compatibility
 
-| CompatibilityId | CompatibleWith  |
+| compatibilityId  | compatibleWith  |
 |------------------|-----------------|
 | 1                | Intel,AMD       |
 | 2                | NVIDIA          |
