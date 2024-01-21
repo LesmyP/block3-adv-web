@@ -11,12 +11,11 @@
     this is the index page database is connected
 
     <div class="container">
-    <h1>Computer part tables</h1>
+    <h1>Computer part tables from index</h1>
         <!-- add controller -->
         <?php
             include_once 'controllers/maincontroller.php';
-            $mainController = new MainController();
-            $mainController->handleRequest();
+
     ?>
     </div>
     

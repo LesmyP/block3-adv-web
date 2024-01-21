@@ -2,7 +2,7 @@
 include_once 'controllers/connection.php';
 include_once 'controllers/brandscontroller.php';
 
-// You can include other controllers here as needed
+// include other controllers here
 
 class MainController {
     private $brandController;
@@ -13,7 +13,7 @@ class MainController {
     }
 
     public function handleRequest() {
-        // Handle requests and route to the appropriate controller/method based on your application logic
+        // Handle the request
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
             switch ($action) {
@@ -21,7 +21,7 @@ class MainController {
                     $this->brandController->showBrands();
                     break;
                 case 'addBrand':
-                    $this->brandController->addBrand();
+                    $this->brandController->add();
                     break;
                 // Add other cases for different actions
                 default:

@@ -16,10 +16,10 @@ class BrandsController {
     }
 
     public function showForm() {
-        include 'views/brands.php'; // Assuming the form is part of the brands view
+        include 'views/brands.php'; 
     }
 
-    public function add() {
+    public function add() { 
         if (isset($_POST['brandName'])) {
             $name = $_POST['brandName'];
             if (!$name) {

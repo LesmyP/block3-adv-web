@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brands View</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     
 </head>
 <body>
@@ -12,7 +11,7 @@
     
     <div class="container">
 
-        <h1>Brands page updated</h1>
+        <h1>Brands page (views/brands)</h1>
 
         <form method="POST">
             <input type="text" name="brandName" placeholder="Brand" value="<?php echo $_POST['brandName']?$_POST['brandName']:""; ?>">
