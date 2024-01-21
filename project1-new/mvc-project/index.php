@@ -12,7 +12,7 @@
 
     <div class="container">
     <h1>Computer part tables from index</h1>
-        <!-- add controller -->
+        <!-- add controllers -->
         <?php
             include_once 'controllers/maincontroller.php';
 

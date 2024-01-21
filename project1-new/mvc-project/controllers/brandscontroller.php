@@ -19,7 +19,7 @@ class BrandsController {
         include 'views/brands.php'; 
     }
 
-    public function add() { 
+    public function add() {
         if (isset($_POST['brandName'])) {
             $name = $_POST['brandName'];
             if (!$name) {

@@ -13,7 +13,7 @@ class MainController {
     }
 
     public function handleRequest() {
-        // Handle the request
+        // Handle requests and route to the appropriate controller/method 
         if (isset($_GET['action'])) {
             $action = $_GET['action'];
             switch ($action) {
@@ -23,7 +23,7 @@ class MainController {
                 case 'addBrand':
                     $this->brandController->add();
                     break;
-                // Add other cases for different actions
+                // Add here other cases for different actions
                 default:
                     // Handle invalid actions or redirect to a default page
                     break;
