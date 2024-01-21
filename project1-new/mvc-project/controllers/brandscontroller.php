@@ -2,44 +2,39 @@
 
 include_once 'models/brandsmodel.php';
 
-   
-class Controller {
+class BrandsController {
     private $model;
+
     public function __construct($connection) {
-        $this->model = new brandModel($connection);
+        $this->model = new BrandModel($connection);
     }
+
     public function showBrands() {
-        // echo "SELECT * FROM brands";
-        $users = $this->model->selectBrand();
-        include 'views/home.php';
-    }
-    
-    public function showForm() {
+        $brands = $this->model->selectBrand();
+        // Include your view file here
         include 'views/brands.php';
     }
+
+    public function showForm() {
+        include 'views/brands.php'; // Assuming the form is part of the brands view
+    }
+
     public function add() {
-        $name = $_POST['brandName'];
-        if (!$name) {
-            echo "<p>Missing information</p>";
-            $this->showForm();
-            return;
-        } else if($this->model->insertBrand($name)){
-            echo "<p>Added brand: $name</p>";
-        } else {
-            echo "<p>Could not add brand</p>";
+        if (isset($_POST['brandName'])) {
+            $name = $_POST['brandName'];
+            if (!$name) {
+                echo "<p>Missing information</p>";
+                $this->showForm();
+                return;
+            } elseif ($this->model->insertBrand($name)) {
+                echo "<p>Added brand: $name</p>";
+            } else {
+                echo "<p>Could not add brand</p>";
+            }
         }
         $this->showBrands();
     }
 }
 
-
-include_once 'controllers/connection.php';
-$connection2 = new connectionBrand($host, $username, $password, $database);
-$controller = new Controller($connection2);
-
-if(isset($_POST['submit'])) {
-    $controller->add();
-} else {
-    $controller->showForm();
-}
 ?>
+

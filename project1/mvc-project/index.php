@@ -14,9 +14,7 @@
     <h1>Computer part tables</h1>
         <!-- add controller -->
         <?php
-            include_once 'controllers/maincontroller.php';
-            $mainController = new MainController();
-            $mainController->handleRequest();
+        include_once("controllers/brandscontroller.php");
     ?>
     </div>
     
