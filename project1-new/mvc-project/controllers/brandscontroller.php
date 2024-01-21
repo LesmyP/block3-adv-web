@@ -1,6 +1,6 @@
 <?php
 
-include_once 'models/brands.php';
+include_once 'models/brandsmodel.php';
 
    
 class Controller {
