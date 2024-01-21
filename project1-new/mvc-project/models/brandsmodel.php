@@ -1,19 +1,23 @@
 <?php
 
-class connectionObject {
+// ini_set('display_errors', '1');
+// ini_set('display_startup_errors', '1');
+// error_reporting(E_ALL);
+
+class connectionBrand {
     public function __construct(public $host, public $username, public $password, public $database) {
     }
 }
 
-class userModel {
+class brandModel {
     private $mysqli;
-    private $connectionObject;
-    public function __construct($connectionObject) {
-        $this->connectionObject = $connectionObject;
+    private $connectionBrand;
+    public function __construct($connectionBrand) {
+        $this->connectionBrand = $connectionBrand;
     }
     public function connect() {
         try {
-            $mysqli = new mysqli($this->connectionObject->host, $this->connectionObject->username, $this->connectionObject->password, $this->connectionObject->database);
+            $mysqli = new mysqli($this->connectionBrand->host, $this->connectionBrand->username, $this->connectionBrand->password, $this->connectionBrand->database);
             if($mysqli->connect_error) {
                 throw new Exception('Could not connect');
             }

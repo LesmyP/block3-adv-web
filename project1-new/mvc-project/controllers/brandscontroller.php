@@ -6,7 +6,7 @@ include_once 'models/brandsmodel.php';
 class Controller {
     private $model;
     public function __construct($connection) {
-        $this->model = new userModel($connection);
+        $this->model = new brandModel($connection);
     }
     public function showBrands() {
         // echo "SELECT * FROM brands";
@@ -34,7 +34,7 @@ class Controller {
 
 
 include_once 'controllers/connection.php';
-$connection2 = new connectionObject($host, $username, $password, $database);
+$connection2 = new connectionBrand($host, $username, $password, $database);
 $controller = new Controller($connection2);
 
 if(isset($_POST['submit'])) {
