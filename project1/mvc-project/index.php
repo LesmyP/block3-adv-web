@@ -9,6 +9,12 @@
 </head>
 <body>
     this is the index page database is connected
+    <?php
+        ini_set('display_errors', '1');
+        ini_set('display_startup_errors', '1');
+        error_reporting(E_ALL);
+    ?>
+
 
     <div class="container">
     <h1>Computer part tables</h1>

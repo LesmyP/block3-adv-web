@@ -50,4 +50,37 @@ class brandModel {
             return false;
         }
     }
+    public function getBrandByID($brandID) {
+        $mysqli = $this->connect();
+        if ($mysqli) {
+            $result = $mysqli->query("SELECT * FROM brands WHERE brandID = $brandID");
+            $row = $result->fetch_assoc();
+            $mysqli->close();
+            return $row;
+        } else {
+            return false;
+        }
+    }
+
+    public function updateBrand($brandID, $name) {
+        $mysqli = $this->connect();
+        if ($mysqli) {
+            $mysqli->query("UPDATE brands SET brandName = '$name' WHERE brandID = $brandID");
+            $mysqli->close();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteBrand($brandID) {
+        $mysqli = $this->connect();
+        if ($mysqli) {
+            $mysqli->query("DELETE FROM brands WHERE brandID = $brandID");
+            $mysqli->close();
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

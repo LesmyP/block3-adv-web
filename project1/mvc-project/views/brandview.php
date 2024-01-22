@@ -11,11 +11,11 @@
 
         
     <?php
-    if ($brands) {
-        foreach ($brands as $brand) {
-            echo $brand['brandName'] . '<br>';
-        }
+if ($brands) {
+    foreach ($brands as $brand) {
+        echo $brand['brandName'] . ' <a href="?action=edit&id=' . $brand['brandID'] . '">Edit</a> <a href="?action=delete&id=' . $brand['brandID'] . '">Delete</a><br>';
     }
+}
     ?>
 
 </body>
