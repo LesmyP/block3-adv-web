@@ -4,20 +4,20 @@
 // ini_set('display_startup_errors', '1');
 // error_reporting(E_ALL);
 
-class connectionType {
+class connectionBrand {
     public function __construct(public $host, public $username, public $password, public $database) {
     }
 }
 
-class partTypeModel {
+class brandModel {
     private $mysqli;
-    private $connectionType;
-    public function __construct($connectionType) {
-        $this->connectionType = $connectionType;
+    private $connectionBrand;
+    public function __construct($connectionBrand) {
+        $this->connectionBrand = $connectionBrand;
     }
     public function connect() {
         try {
-            $mysqli = new mysqli($this->connectionType->host, $this->connectionType->username, $this->connectionType->password, $this->connectionType->database);
+            $mysqli = new mysqli($this->connectionBrand->host, $this->connectionBrand->username, $this->connectionBrand->password, $this->connectionBrand->database);
             if($mysqli->connect_error) {
                 throw new Exception('Could not connect');
             }
@@ -26,11 +26,11 @@ class partTypeModel {
             return false;
         }
     }
-    public function selectType(){
-        // echo "SELECT * FROM parttypes";
+    public function selectBrand(){
+        // echo "SELECT * FROM brands";
         $mysqli = $this->connect();
         if($mysqli) {
-            $result = $mysqli->query("SELECT * FROM partTypes");
+            $result = $mysqli->query("SELECT * FROM brands");
             while($row = $result->fetch_assoc()) {
                 $results[] = $row;
             }
@@ -40,10 +40,10 @@ class partTypeModel {
             return false;
         }
     }
-    public function insertPartType($name) {
+    public function insertBrand($name) {
         $mysqli = $this->connect();
         if($mysqli) {
-            $mysqli->query("INSERT INTO partTypes (typeName) VALUES ('$name')");
+            $mysqli->query("INSERT INTO brands (brandName) VALUES ('$name')");
             $mysqli->close();
             return true;
         } else {

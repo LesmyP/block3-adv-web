@@ -11,13 +11,12 @@
     this is the index page database is connected
 
     <div class="container">
-    <h1>Computer part tables from index</h1>
-        <!-- add controllers -->
+    <h1>Computer part tables</h1>
+        <!-- add controller -->
         <?php
-            include_once 'controllers/maincontroller.php';
-
+        include_once("controllers/brandscontroller.php");
     ?>
     </div>
-    <!--  this is the file with 2 controllers includin main controler that is not working -->
+    <!-- this is a backup one table working, one controller brands -->
 </body>
 </html>

@@ -15,8 +15,14 @@
         <!-- add controller -->
         <?php
         include_once("controllers/brandscontroller.php");
+        include_once("controllers/parttypescontroller.php");
+        
+        
+        
     ?>
     </div>
+
+    <!-- This is the folder with 2 tables connected to the database -->
     
 </body>
 </html>

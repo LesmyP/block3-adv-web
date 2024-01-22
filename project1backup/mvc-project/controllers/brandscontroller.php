@@ -2,6 +2,7 @@
 
 include_once 'models/brandsmodel.php';
 
+   
 class Controller {
     private $model;
     public function __construct($connection) {
@@ -9,12 +10,12 @@ class Controller {
     }
     public function showBrands() {
         // echo "SELECT * FROM brands";
-        $brands = $this->model->selectBrand();
-        include 'views/brandview.php';
+        $users = $this->model->selectBrand();
+        include 'views/home.php';
     }
     
     public function showForm() {
-        include 'views/brandform.php';
+        include 'views/brands.php';
     }
     public function add() {
         $name = $_POST['brandName'];
@@ -35,8 +36,6 @@ class Controller {
 include_once 'controllers/connection.php';
 $connection2 = new connectionBrand($host, $username, $password, $database);
 $controller = new Controller($connection2);
-
-$controller->showBrands();
 
 if(isset($_POST['submit'])) {
     $controller->add();
