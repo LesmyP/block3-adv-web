@@ -39,7 +39,7 @@ $controllertype = new TypeController($connection3);
 
 $controllertype->showType();
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['submitType'])) {
     $controllertype->addType();
 } else {
     $controllertype->showFormType();

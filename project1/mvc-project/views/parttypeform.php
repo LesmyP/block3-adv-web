@@ -18,7 +18,7 @@
         <form method="POST">
             <input type="text" name="typeName" placeholder="PartType" value="<?php echo $_POST['typeName']?$_POST['typeName']:""; ?>">
 
-            <input type="submit" name="submit" value="Submit">
+            <input type="submit" name="submitType" value="Submit">
             <input type="reset" name="reset" value="Reset">
         
         </form>
