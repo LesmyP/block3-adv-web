@@ -40,10 +40,10 @@ class partTypeModel {
             return false;
         }
     }
-    public function insertPartType($name) {
+    public function insertPartType($nameone) {
         $mysqli = $this->connect();
         if($mysqli) {
-            $mysqli->query("INSERT INTO partTypes (typeName) VALUES ('$name')");
+            $mysqli->query("INSERT INTO partTypes (typeName) VALUES ('$nameone')");
             $mysqli->close();
             return true;
         } else {

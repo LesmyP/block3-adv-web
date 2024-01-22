@@ -27,7 +27,7 @@ class Controller {
         } else {
             echo "<p>Could not add brand</p>";
         }
-        $this->showBrands();
+        // $this->showBrands();
     }
 }
 

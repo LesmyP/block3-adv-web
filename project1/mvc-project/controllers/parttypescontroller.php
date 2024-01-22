@@ -10,7 +10,7 @@ class TypeController {
     }
     public function showType() {
         // echo "SELECT * FROM partType";
-        $brands = $this->typemodel->selectType();
+        $partType = $this->typemodel->selectType();
         include 'views/parttypeview.php';
     }
     
@@ -18,17 +18,17 @@ class TypeController {
         include 'views/parttypeform.php';
     }
     public function addType() {
-        $name = $_POST['typeName'];
-        if (!$name) {
+        $nameone = $_POST['typeName'];
+        if (!$nameone) {
             echo "<p>Missing information</p>";
             $this->showFormType();
             return;
-        } else if($this->typemodel->insertPartType($name)){
-            echo "<p>Added part type: $name</p>";
+        } else if($this->typemodel->insertPartType($nameone)){
+            echo "<p>Added part type: $nameone</p>";
         } else {
             echo "<p>Could not add part type</p>";
         }
-        $this->showType();
+        // $this->showType();
     }
 }
 
