@@ -12,12 +12,15 @@
 
         <form method="POST" action="?action=update">
             <input type="hidden" name="brandID" value="<?php echo $brand['brandID']; ?>">
-            <input type="text" name="brandName" placeholder="Brand" value="<?php echo $brand['brandName']; ?>">
+            <input type="text" name="brandName" placeholder="Brand" value="<?php echo isset($brand['brandName']) ? $brand['brandName'] : ''; ?>">
 
             <input type="submit" name="submit" value="Update">
-            <a href="?action=cancel">Cancel</a>
+            <input type="reset" name="reset" value="Reset">
         </form>
+
     </div> 
+    
+
     
 </body>
 </html>

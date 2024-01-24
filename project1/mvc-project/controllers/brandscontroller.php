@@ -22,6 +22,7 @@ class Controller {
     }
 
     public function add() {
+        // echo 'test add function';
         try {
             $name = $_POST['brandName'];
 
@@ -38,6 +39,7 @@ class Controller {
             echo "<p>Error: " . $e->getMessage() . "</p>";
             $this->showForm();
         }
+        
     }
 
     public function edit($brandID) {
@@ -81,36 +83,29 @@ include_once 'controllers/connection.php';
 $connection2 = new connectionBrand($host, $username, $password, $database);
 $controller = new Controller($connection2);
 
-// Check for actions like edit and delete
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
-    switch ($action) {
-        case 'edit':
+        // Check for actions like edit and delete
+        if (isset($_GET['action']) && $_GET['action'] === 'edit') {
+            // Handle edit action
             if (isset($_GET['id'])) {
                 $controller->edit($_GET['id']);
             } else {
                 echo "Invalid ID for editing";
             }
-            break;
-        case 'delete':
+        } elseif (isset($_GET['action']) && $_GET['action'] === 'delete') {
+            // Handle delete action
             if (isset($_GET['id'])) {
                 $controller->delete($_GET['id']);
             } else {
                 echo "Invalid ID for deletion";
             }
-            break;
-        default:
-            $controller->showBrands();
-            break;
-    }
-} else {
-    // Normal flow
-    if (isset($_POST['submit'])) {
-        $controller->add();
-    } else {
-        $controller->showForm();
-    }
-
-    $controller->showBrands();
-}
-?>
+        } elseif (isset($_GET['action']) && $_GET['action'] === 'update') {
+            // Handle update action
+            $controller->update();
+        } elseif (isset($_POST['submit'])) {
+            $controller->add();
+        } else {
+            $controller->showForm();
+        }
+        
+        $controller->showBrands();
+        
