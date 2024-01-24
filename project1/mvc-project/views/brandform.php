@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Form</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="./style.css"> -->
 </head>
+
+<style>
+
+</style>
+
+
 <body>
 <div class="container">
 
@@ -14,8 +20,8 @@
     <form method="POST" action="?action=add">
         <input type="text" name="brandName" placeholder="Brand" value="<?php echo isset($_POST['brandName']) ? $_POST['brandName'] : ''; ?>">
 
-        <input type="submit" name="submit" value="Submit">
-        <input type="reset" name="reset" value="Reset">
+        <input class="btn" type="submit" name="submit" value="Submit">
+        <input class="btn" type="reset" name="reset" value="Reset">
 
     </form>
 </div>
