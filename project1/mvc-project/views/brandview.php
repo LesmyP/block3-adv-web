@@ -6,7 +6,7 @@
     <title>Brand View</title>
 </head>
 <body>
-    <h1>Brand page</h1>
+    <h1>Brand view page</h1>
     
 
         

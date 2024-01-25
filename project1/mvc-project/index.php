@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="container messages">
     <?php
         ini_set('display_errors', '1');
         ini_set('display_startup_errors', '1');
@@ -25,8 +27,9 @@
             unset($_SESSION['error_message']); // Clear the error message
         }
     ?>
-
+    </div>
     <div class="container">
+    
         <h1>Computer part tables</h1>
         <!-- add controller -->
         <?php

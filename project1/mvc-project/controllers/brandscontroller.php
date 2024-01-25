@@ -89,7 +89,7 @@ include_once 'controllers/connection.php';
 $connection2 = new connectionBrand($host, $username, $password, $database);
 $controller = new Controller($connection2);
 
-// Check for actions like edit and delete
+
 if (isset($_GET['action']) && $_GET['action'] === 'edit') {
     // Handle edit action
     if (isset($_GET['id'])) {
