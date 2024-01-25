@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    /* border: 3px solid black; */
+}
+
+.parent {
+    max-width: 1000px;
+    /* margin: 50px auto; */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid black; */
+}
+
+.messages {
+    width: 100%;
+    min-height: 80px;
+    background-color: transparent;
+    color: red;
+    font-size: 25px;
+    /* border: 3px solid black; */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    /* border: 3px solid black; */
+}
+
+.controller-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 0 0 50%; /* Adjust the width as needed */
+}
+
+.lef {
+    order: 1; 
+}
+
+.rigth {
+    order: 2; 
+}
+
+.success {
+    color: #4CAF50;
+}
+
+.error {
+    color: #f44336;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+

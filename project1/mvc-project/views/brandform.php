@@ -7,11 +7,6 @@
 
 </head>
 
-<style>
-
-</style>
-
-
 <body>
 <div class="container">
 
