@@ -1,0 +1,64 @@
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .grid-container {
+        grid-template-areas:
+            'right'
+            'left';
+        }
+    .container{
+		max-width: 600px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .main-banner{
+        padding: 25px;
+        height: 200px;
+    }
+
+    .main-banner h1{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .grid-container{
+        padding: 10px;
+    }
+
+    .main-banner h3{
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    .titles-section, .contact-tex-box h2{
+        font-size: 25px;
+    }
+    .btn, .btn1{
+        font-size: 12px;
+        padding: 8px 16px;
+        font-weight: 300;
+    }
+
+    .text-box{
+        text-align: center;
+        padding-top: 25px;
+    }
+
+    .contact-tex-box h4{
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .contact-tex-box h5{
+        font-size: 16px;
+        margin-bottom: 30px;
+        font-weight: 500;
+        color: #ba7070;
+    }
+
+    
+
+}
