@@ -32,19 +32,12 @@ class partTypeModel {
     public function selectType() {
         $mysqli = $this->connect();
         if ($mysqli) {
-            $results = array();  
             $result = $mysqli->query("SELECT * FROM partTypes");
-            if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                    $results[] = $row;
-                }
-                $mysqli->close();
-                return $results;
-            } else {
-                echo "Error: " . $mysqli->error;
-                $mysqli->close();
-                return false;
+            while($row = $result->fetch_assoc()) {
+                $results[] = $row;
             }
+            $mysqli->close();
+            return $results;
         } else {
             return false;
         }
@@ -79,10 +72,10 @@ class partTypeModel {
         }
     }
 
-    public function updatePartType($typeID, $name) {
+    public function updatePartType($typeID, $nameone) {
         $mysqli = $this->connect();
         if ($mysqli) {
-            $mysqli->query("UPDATE partTypes SET typeName = '$name' WHERE partTypeID = $typeID");
+            $mysqli->query("UPDATE partTypes SET typeName = '$nameone' WHERE partTypeID = $typeID");
             $mysqli->close();
             return true;
         } else {

@@ -20,19 +20,18 @@ class TypeController {
     
 
     public function showForm() {
-        $partType = $this->typemodel->selectType();
         include 'views/parttypeform.php';
     }
 
     public function addType() {
         try {
-            $name = $_POST['typeName'];
+            $nameone = $_POST['typeName'];
 
-            if (empty($name)) {
+            if (empty($nameone)) {
                 throw new Exception('Part type name is required.');
             }
 
-            if ($this->typemodel->insertPartType($name)) {
+            if ($this->typemodel->insertPartType($nameone)) {
                 $_SESSION['success_message'] = "Part type added successfully.";
             }
 
@@ -45,20 +44,20 @@ class TypeController {
     }
 
     public function edit ($typeID) {
-        $partType = $this->typemodel->getPartTypeByID($typeID);
+        $type = $this->typemodel->getPartTypeByID($typeID);
         include 'views/parttypeeditform.php';
     }
 
     public function update() {
         try {
             $typeID = $_POST['partTypeID'];
-            $name = $_POST['typeName'];
+            $nameone = $_POST['typeName'];
 
-            if (empty($name) || empty($typeID)) {
+            if (empty($nameone) || empty($typeID)) {
                 throw new Exception('Part type ID and name are required.');
             }
 
-            if ($this->typemodel->updatePartType($typeID, $name)) {
+            if ($this->typemodel->updatePartType($typeID, $nameone)) {
                 $_SESSION['success_message'] = "Part type updated successfully.";
             } else {
                 $_SESSION['error_message'] = "Could not update part type.";
